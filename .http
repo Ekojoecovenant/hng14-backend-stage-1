@@ -1,0 +1,12 @@
+@url = http://localhost:5000/api/profiles
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+  "name": "emmanuel"
+}
+
+###
+GET {{url}}?gender=male
