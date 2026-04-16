@@ -1,12 +1,18 @@
-@url = http://localhost:5000/api/profiles
+@url = https://581e-154-160-19-39.ngrok-free.app/api/profiles
 
 ###
 POST {{url}}
 Content-Type: application/json
 
 {
-  "name": "emmanuel"
+  "name": "ella"
 }
 
 ###
-GET {{url}}?gender=male
+GET {{url}}
+
+###
+GET {{url}}/5f28b980-85b0-4317-a472-ad093e80fe84
+
+### 
+DELETE {{url}}/e14bcd18-24b3-4336-97ad-e324aaefb09e

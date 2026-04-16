@@ -143,8 +143,7 @@ export class ProfileController {
   async deleteProfile(req: Request, res: Response) {
     try {
       const { id } = req.params;
-
-      const result = await pool.query('DELETE FROM profiles WHERE id = $1 RETURNED id', [id]);
+      const result = await pool.query('DELETE FROM profiles WHERE id = $1 RETURNING id', [id]);
 
       if (result.rows.length === 0) {
         return res.status(404).json({
@@ -154,7 +153,7 @@ export class ProfileController {
       }
 
       res.status(204).send();
-    } catch (error) {
+    } catch {
       res.status(500).json({
         status: 'error',
         message: 'Internal server error',
